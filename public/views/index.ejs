@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<link href="css/style.css" type="text/css" rel="stylesheet" />
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js" ></script>
+	</head>
+	<body>
+		<h1>Create a new user</h1>
+		<form method="POST" action="/person">
+			<div class = 'name'>Firstname:</div> <input type="text" id="firstname" name="firstname" /><br />
+			<div class = 'name'>Lastname:</div> <input type="text" id="lastname" name="lastname" /><br />
+			<input type="submit" value="Submit" />
+		</form>
+		<h1>Here are what we stored</h1>
+		<% if (userinfos.length) { %>
+			<ul>
+				<% userinfos.forEach(function(userinfo){%>
+					<li><div class = "name"> <%= userinfo['firstname'] %> <%= userinfo['lastname'] %> </div></li>
+				<% }) %>
+			</ul>
+		<% } %>
+	</body>
+</html>
